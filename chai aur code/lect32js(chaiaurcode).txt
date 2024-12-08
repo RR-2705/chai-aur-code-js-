@@ -1,0 +1,108 @@
+---->>>
+getElementById, getElementByClassName ye sb query selctors hai
+
+
+----->>>
+
+difference between "innerHTML", "textContent", "innerText:
+
+ normally ye teeno to samne output deta hai (aisa hmlog ko lgta hai )
+
+but the difference is :-
+innerText wohi dikhata hai jo bs visible hota hai screen pr after inspect(using css hmlog kch ko invisible bhi to bna skte hain ) 
+
+visible kaise nhi hota hai using css in styling (display: none) kch part ko 
+
+textContent me sb dikhta hai (sara text dikhta hai)
+
+
+innerHtml :- pura de deta hai with tags too(h1 ,p etc,etc) sb sath me de deta hai 
+
+
+
+------>>>
+query selectors('') :---  sb inverted comma me rhna jruri hai
+NOTE :- isme sare css selectors chlte hai. 
+
+
+-> document.queryselector('h1')  ---- ye kya krega ki phla baar jo bhi h1 aaya hoga usko select kr lega
+same as for any tags h2,p,etc
+
+-> queryselector me hmlog class name and id name bhi daal skte hai 
+
+      document.queryselector('#title')       # for id name ,(.)dot for class name, same as used in css
+ 
+-> lets take a case ki :- ek unordered list me 4 list hai usme se mujhe 1st wale ka background color change krna hai.
+
+
+....document.querySelector('ul')  --> isse wo unordered list select ho gya 
+ isko kisi variable me store kr lo nhi bhi kroge tb bhi chlega   --> const myul=document.querySelector('ul')
+
+ ab isme phir se queryselector lgayenge li ko select krne ke liye 
+ --> document.querySelector('ul').querySelector('li')
+
+phir normal css lga do jaise use krte the css me:
+
+-->document.querySelector('ul').querySelector('li').style.backgroundColor = "yellow" 
+
+
+
+------>>
+querySelectorAll() 
+
+iska output nodelist ke form me aata hai
+
+NOTE :- nodelist is similar as array but not same
+document.querySelectorAll('li')  ---> isse jitna bhi li hoga us code me sb select ho jayega
+
+ab first li ka agar color change krna hai then :-
+document.querySelectorAll('li')[0].style.color = "red"
+
+isse color change ho jayega
+
+first list element ka
+
+----------->
+
+nodelist ko array me convert kr skte hai 
+nodelist me "foreach" ka use krte hai agar map ye sb ka use krna hai then array me convert krna hota hai
+
+
+
+
+------>>
+getElementsByClassName ()
+
+iska output "HTMLCollection" me hota hai  
+isme to hmlog foreach ka bhi use nhi kr skte hai iske 'prototype' me hi nhi hai option 
+
+this gives a "HTMLcollection" of elemnts present in "list-item" class
+--> document.getElementsByClassName('list-item')
+
+just giving a variable name for save time
+const tempClassList  = document.getElementsByClassName('list-item')
+
+vvvvviiiii :-----
+
+how to convert html collection in array (so that use all array proprties in html collection)
+
+--> Array.from(tempClassList)   NOTE :- here tempClassList is a variable name of HTML collection
+
+
+now use all array properties in HTMLcollection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
